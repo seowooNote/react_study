@@ -1,5 +1,3 @@
-
-
 function InfoInput({ name, onChange, value, placeholder, inputRef }) {
 
     return (
