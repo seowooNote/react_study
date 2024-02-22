@@ -17,7 +17,6 @@ function StudentArrayPage3(props) {
 
     const staticId = useRef(0);
 
-
     useEffect(() => {
         const total = studentList.reduce((result, student) => result + student.score, 0);
         const avg = studentList.length === 0 ? 0 : total / studentList.length;
@@ -26,8 +25,7 @@ function StudentArrayPage3(props) {
             total,
             avg
         });
-    }, [studentList])
-
+    }, [studentList]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
