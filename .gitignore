@@ -6,6 +6,7 @@
 .pnp.js
 /hello_react/node_modules
 /number_counter/node_modules
+/emotion_study/.env
 
 # testing
 /coverage
