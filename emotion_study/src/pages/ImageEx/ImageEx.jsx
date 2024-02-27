@@ -124,7 +124,7 @@ function ImageEx() {
 
     return (
         <div css={layout}>
-            {Array.isArray(url) && url.length > 0 ? url.map((url, index) => {
+            {Array.isArray(url) && url.length > 0 ? url?.map((url, index) => {
                 return(
                     <div key={index} css={imageLayout}>
                         <img src={url} alt="" />

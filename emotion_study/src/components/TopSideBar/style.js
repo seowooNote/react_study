@@ -59,6 +59,7 @@ export const menuItem = css`
     justify-content: center;
     align-items: center;
     border: 1px solid #dbdbdb;
+    margin: 0px 10px;
 
     width: 200px;
     height: 50px;
@@ -70,10 +71,6 @@ export const menuItem = css`
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
-
-    &:nth-of-type(2) {
-        margin: 0px 20px;
-    }
 
     &:hover {
         background-color: #eee;
