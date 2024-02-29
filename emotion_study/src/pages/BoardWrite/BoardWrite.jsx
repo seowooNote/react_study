@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useMemo } from "react";
 import { useNavigate } from 'react-router-dom';
 import ReactQuill from "react-quill";
 import { QUILL_MODULES } from "../../constants/quillModules";
@@ -51,19 +50,21 @@ const submitButton = css`
 `;
 
 function BoardWrite() {
-  const [ inputValue, handleInputChange ] = useMaxSizeValidateInput(10);
+  const [ inputValue, handleInputChange ] = useMaxSizeValidateInput(20);
   const [ quillValue, handleQuillValueChange ] = useQuillInput();
   const { boardList, lastId } = useLoadList();
   const navigate = useNavigate();
 
   const handleSubmitClick = () => {
-    const board = {
-      boardId : lastId + 1,
-      boardTitle : inputValue,
-      boardContent : quillValue
+    let newBoardList = []
+    for(let i = 0; i < 203; i++) {
+      const board = {
+        boardId : i + 1,
+        boardTitle : inputValue + (i + 1),
+        boardContent : quillValue
+      }
+      newBoardList = [...newBoardList, board];
     }
-
-    const newBoardList = [...boardList, board];
     localStorage.setItem("boardList", JSON.stringify(newBoardList));
     alert("게시글 작성 완료!!!");
     navigate("/board/list");
